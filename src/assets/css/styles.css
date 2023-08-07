@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+:root {
+	--max-row-height: 200px;
+	--max-card-widht: 300px;
+
+	/* Custom Colors */
+	--black: hsl(0deg 0% 10%);
+	--light: hsl(0deg 0% 95%);
+	--white: hsl(0deg 0% 100%);
+
+	/* Official Colors */
+	--official-yellow: hsl(48deg 100% 51%);
+	--official-blue: hsl(219deg 52% 44%);
+
+	/* Pokemon Types Colors */
+	--bug: hsl(94deg 24% 65%);
+	--dark: hsl(0deg 0% 10%);
+	--dragon: hsl(266deg 31% 46%);
+	--electric: hsl(52deg 100% 87%);
+	--fairy: hsl(24deg 100% 86%);
+	--fighting: hsl(351deg 57% 60%);
+	--fire: hsl(21deg 67% 63%);
+	--flying: hsl(322deg 46% 65%);
+	--ghost: hsl(239deg 100% 85%);
+	--grass: hsl(101deg 53% 76%);
+	--ground: hsl(37deg 53% 78%);
+	--ice: hsl(215deg 100% 98%);
+	--normal: hsl(34deg 31% 82%);
+	--poison: hsl(236deg 27% 39%);
+	--psychic: hsl(337deg 53% 67%);
+	--rock: hsl(28deg 19% 54%);
+	--steel: hsl(228deg 2% 49%);
+	--water: hsl(201deg 100% 84%);
+}
+
+*,
+body {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	overflow-x: hidden;
+	font-size: 10px;
+}
+
+body {
+	min-height: 100vh;
+
+	font-family: Poppins, system-ui, sans;
+	font-size: 1.6rem;
+	color: var(--dark);
+
+	background-color: var(--official-blue);
+}
+
+#root {
+	min-height: 100vh;
+}
+
+main {
+	display: grid;
+	grid-template: 1fr 1fr;
+	min-height: 100vh;
+	padding: 60px
+}
+
+ul {
+	list-style: none;
+}
+
+.grid {
+	display: grid;
+	grid-auto-rows: var(--max-row-height);
+	grid-template-columns: repeat(auto-fit, minmax(var(--max-card-widht), 1fr));
+	gap: 35px;
+
+	margin-bottom: 10rem;
+}
+
+.card {
+	position: relative;
+	padding: 20px;
+	border-radius: 20px;
+	box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 38%);
+}
+
+.card h3 {
+	margin-bottom: 10px;
+	font-size: 3rem;
+	font-weight: 700;
+	text-transform: capitalize;
+}
+
+.card .label {
+	display: inline-block;
+
+	margin-right: 310px;
+	margin-bottom: 5px;
+	padding: 5px 10px;
+
+	font-size: 1.8rem;
+	font-weight: 700;
+	color: var(--dark);
+	text-transform: capitalize;
+
+	background-color: hsl(0deg 0% 100% / 50%);
+	border-radius: 50px;
+}
+
+.card img {
+	position: absolute;
+	right: -30px;
+	bottom: -30px;
+
+	max-width: 230px;
+	max-height: 170px;
+
+	filter: drop-shadow(8px 16px 16px hsl(0deg 0% 0% / 70%));
+}
+
+.pagination {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	padding: 20px;
+}
+
+.pagination .btn,
+.pagination button {
+	padding: 10px 20px;
+
+	font-size: 1.8rem;
+	font-weight: 700;
+	color: var(--official-blue);
+	text-decoration: none;
+
+	background-color: var(--official-yellow);
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 38%);
+}
+
+.pagination button:hover {
+	transform: translateX(2px);
+	transform: translateY(2px);
+	box-shadow: 2px 4px 4px hsl(0deg 0% 0% / 38%);
+}
+
+/** PAGES */
+
+.home {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+

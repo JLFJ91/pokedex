@@ -1,0 +1,107 @@
+:root {
+    --pokeball-size: 150px;
+    --pokeball-red: hsl(14deg 100% 48%);
+    --pokeball-blue: hsl(199deg 19% 26%);
+    --pokeball-white: hsl(0deg 0% 100%);
+    --pokeball-shadow-color: hsl(0deg 0% 0% / 12%);
+    --pokeball-shadow: inset -10px 5px 0 var(--pokeball-shadow-color);
+    --pokeball-shadow-hover: inset -5px 5px 0 var(--pokeball-shadow-color);
+}
+
+.pokeball {
+	position: relative;
+	z-index: 1;
+
+	width: var(--pokeball-size);
+	height: var(--pokeball-size);
+
+	border-radius: var(--pokeball-size);
+	box-shadow: -5px 5px 0 var(--pokeball-shadow-color);
+
+	transition: transform 0.5s ease-in-out
+}
+
+.pokeball .top {
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 50%;
+
+	background-color: var(--pokeball-red);
+	border: 8px solid var(--pokeball-blue);
+	border-radius: var(--pokeball-size) var(--pokeball-size) 0 0;
+	box-shadow: var(--pokeball-shadow);
+
+	transition: box-shadow 0.5s ease-in-out;
+}
+
+.pokeball .bottom {
+	position: absolute;
+	z-index: 0;
+	bottom: 0;
+	left: 0;
+
+	width: 100%;
+	height: 50%;
+
+	background-color: var(--pokeball-white);
+	border: 8px solid var(--pokeball-blue);
+	border-top: 0;
+	border-radius: 0 0 var(--pokeball-size) var(--pokeball-size);
+	box-shadow: var(--pokeball-shadow);
+
+	transition: box-shadow 0.5s ease-in-out;
+}
+
+.pokeball img {
+	position: absolute;
+	z-index: 1;
+	top: -180px;
+	left: -50%;
+	transform: translateX(-25%);
+
+	filter: drop-shadow(-5px 5px 0 var(--pokeball-shadow-color)); 
+
+	transition: transform 0.5s ease-in-out
+}
+
+.pokeball .push {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	width: 30%;
+	height: 30%;
+
+	background-color: var(--pokeball-white);
+	border: 8px solid var(--pokeball-blue);
+	border-radius: 50%;
+	box-shadow: inset -5px 0 0 var(--pokeball-shadow-color), -2px 2px 0 var(--pokeball-shadow-color);
+
+	transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out
+}
+
+.pokeball:hover {
+	transform: rotate(-5deg);
+}
+
+.pokeball:hover img {
+	transform: rotate(15deg);
+}
+
+.pokeball:hover .top {
+	box-shadow: var(--pokeball-shadow-hover);
+}
+
+.pokeball:hover .bottom {
+	box-shadow: var(--pokeball-shadow-hover);
+}
+
+.pokeball:hover .push {
+	transform: translateY(-20px) translateY(-10px);
+	box-shadow: var(--pokeball-shadow-hover), -4px 4px 0 var(--pokeball-shadow-color)
+}
